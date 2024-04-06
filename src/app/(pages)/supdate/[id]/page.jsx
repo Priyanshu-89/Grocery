@@ -16,6 +16,7 @@ function UpdateStockPage({ params }) {
         const getStockData = async () => {
             try {
                 const res = await axios.post('/api/stockupdate', { ItemId })
+                setItemId(res.data.ItemId)
                 setItemName(res.data.itemName);
                 setCategory(res.data.category);
                 setUnit(res.data.unit);
